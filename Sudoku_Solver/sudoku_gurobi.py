@@ -91,7 +91,7 @@ if __name__ == '__main__':
     start_time = time.time()
     model, variables = build_sudoku_model(GRID)
     model.optimize()
-    status = GRB.OPTIMAL
+    status = model.status
     # Solve the model.
     if status == 2:
         t = time.time() - start_time
